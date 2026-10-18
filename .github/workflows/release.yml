@@ -5,6 +5,8 @@ on:
       - "v*"
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 jobs:
   release:
@@ -14,3 +16,4 @@ jobs:
       - uses: cli/gh-extension-precompile@v2
         with:
           go_version_file: go.mod
+          generate_attestations: true
